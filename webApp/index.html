@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apostrep</title>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>APOSTREP</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="post-box">
+                <div class="user-icon">
+                    <img src="usuario.png" />
+                </div>
+                <textarea id="postContent" placeholder="What's on your mind?" maxlength="140"></textarea>
+                <button onclick="sendPost()">Post</button>
+            </div>
+            <div class="postDetailContainer" style="display: none;"></div>
+
+            <div class="postStream"></div>
+            
+
+        </main>
+
+        <footer class="footer">
+            <div class="footer-icon"></div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
