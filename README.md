@@ -170,6 +170,19 @@ You need to have the following installed:
    - **`StreamController`**: Manages stream-related operations.  
    - **`UserController`**: Manages user-related operations (retrieve, register users).  
 
+## Architecture
+
+![alt text](imagenes/arquitectura.drawio.png)
+
+**Frontend (JavaScript + HTML on S3)**: The web interface of the application, deployed on S3, communicates with the backend through the API Gateway using fetch in JavaScript. The interface allows users to create and view posts.  
+
+**API Gateway**: Serves as the entry point, managing requests to the Lambda microservices. It also applies JWT authentication via AWS Cognito.  
+
+**AWS Cognito**: Provides JWT authentication to secure calls to the microservices.  
+
+**Lambda Microservices (Java)**: The services were split from the original monolith into three Lambda functions to manage users, posts, and streams independently. Each function interacts with a shared database while maintaining modularity.  
+
+**Database**: A single database is used to store users, posts, and streams, ensuring centralized data management while allowing efficient access for each microservice.
 
 ## AWS S3: **Deployment of a static website.**
 
